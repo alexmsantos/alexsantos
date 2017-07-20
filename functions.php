@@ -119,6 +119,12 @@ add_action( 'widgets_init', 'alexsantos_widgets_init' );
 function alexsantos_scripts() {
 	wp_enqueue_style( 'alexsantos-style', get_stylesheet_uri() );
 
+   	wp_deregister_style('alexsantos-style');
+   
+   	wp_register_style( 'muitoestilo', get_template_directory_uri(). '/build/muitoestilo.min.css', false, filemtime( get_template_directory() . '/build/muitoestilo.min.css' ), null);
+   
+   	wp_enqueue_style( 'muitoestilo' );
+
 	wp_enqueue_script( 'alexsantos-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'alexsantos-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
