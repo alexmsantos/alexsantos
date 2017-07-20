@@ -20,14 +20,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    copy: {
-        img: {
-            expand: true,
-            cwd: 'assets/img',
-            src: '**',
-            dest: 'build/img'
-        }
-    },
     uglify: {
         dist: {
             files: {
@@ -40,17 +32,17 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['assets/scss/*.scss'],
-        tasks: ['sass','cssmin','copy']
+        tasks: ['sass','cssmin']
       }, 
       scripts: {
         files: 'js/*.js',
-        tasks: ['copy','uglify']
+        tasks: ['uglify']
       }
     }
     
     });
 
 
-    grunt.registerTask('default', ['sass','cssmin','copy','uglify','watch']);
+    grunt.registerTask('default', ['sass','cssmin','uglify','watch']);
 
 };
