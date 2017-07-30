@@ -133,6 +133,47 @@ function alexsantos_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'alexsantos_scripts' );
 
+add_action( 'init', 'register_cpt_portefolio' );
+
+function register_cpt_portefolio() {
+
+    $labels = array( 
+        'name' => _x( 'Portefolio', 'portefolio' ),
+        'singular_name' => _x( 'Portefolio', 'portefolio' ),
+        'add_new' => _x( 'Novo item', 'portefolio' ),
+        'add_new_item' => _x( 'Novo item', 'portefolio' ),
+        'edit_item' => _x( 'Editar Portefolio', 'portefolio' ),
+        'new_item' => _x( 'Novo item', 'portefolio' ),
+        'view_item' => _x( 'Ver Portefolio', 'portefolio' ),
+        'search_items' => _x( 'Procurar Portefolio', 'portefolio' ),
+        'not_found' => _x( 'Nenhum item encontrado', 'portefolio' ),
+        'not_found_in_trash' => _x( 'Nenhum item encontrado no lixo', 'portefolio' ),
+        'parent_item_colon' => _x( 'Portefolio parente:', 'portefolio' ),
+        'menu_name' => _x( 'Portefolio', 'portefolio' ),
+    );
+
+    $args = array( 
+        'labels' => $labels,
+        'hierarchical' => false,
+        
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'trackbacks', 'custom-fields', 'revisions', 'page-attributes' ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => true,
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => array( 'slug' => 'portefolio' ),
+        'capability_type' => 'post'
+    );
+
+    register_post_type( 'portefolio', $args );
+}
+
+
 /**
  * Implement the Custom Header feature.
  */

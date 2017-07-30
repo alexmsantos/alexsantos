@@ -1,6 +1,23 @@
 //Colors
-
+$black: #222222;
+$grey: #525252;
+$hover: #4169e1;
 
 //Sass files needed
 @import "normalize";
-@import "simplegrid";
+@import "fonts";
+@import "reflex/variables";
+@import "reflex/mixins";
+@import "reflex/grid";
+@import "reflex/helpers";
+@import "home";
+
+body {
+	background: white;
+	color: $black;
+}
+
+article {
+
+}
+

@@ -1,0 +1,61 @@
+.home {
+
+
+	#primary {
+
+		.latest-heading {
+			margin-bottom: 40px;
+			&:after {
+				content: '';
+				display: block;
+				width: 20px;
+				height: 2px;
+				background-color: $black;
+			}
+		}
+
+
+		h2.entry-title {
+			font-size: 16px;
+			line-height: 19px;
+
+			a {
+				color: $black;
+				text-decoration: none;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+
+		}
+
+		.entry-meta,
+		.entry-footer {
+
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 18px;
+			margin-top: 6px;
+			color: $grey;
+
+			a {
+				color: $grey;
+				text-decoration: none;
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+
+		}
+
+		.entry-content {
+
+			font-size: 14px;
+			line-height: 18px;
+
+		}
+
+
+	}
+
+}
