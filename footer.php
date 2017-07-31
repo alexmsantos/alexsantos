@@ -10,21 +10,21 @@
  */
 
 ?>
-
-	</div><!-- #content -->
+	</div> <!-- content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'alexsantos' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'alexsantos' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'alexsantos' ), 'alexsantos', '<a href="https://automattic.com/">Underscores.me</a>' );
-			?>
-		</div><!-- .site-info -->
+
+		<div class="grid">
+			<div class="grid__col-12">
+				<div class="grid">
+					<div class="grid__col-md-12">
+						<div class="site-info">
+							@ Alex Santos <?php echo date("Y") ?>. Todos os direitos reservados.
+						</div><!-- .site-info -->
+					</div><!-- grid__col-12 -->
+				</div><!-- grid -->
+			</div><!-- grid__col-12 -->
+		</div><!-- grid -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

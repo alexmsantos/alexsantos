@@ -45,10 +45,39 @@ module.exports = function(grunt) {
             }
         },
 
+        px_to_rem: {
+            dist: {
+                options: {
+                    base: 16,
+                    fallback: false,
+                    fallback_existing_rem: false,
+                    ignore: ['margin','padding','width','height','max-width','max-height','margin-top','margin-bottom','margin-left','margin-right','padding-top','padding-bottom','padding-left','padding-right','border','border-bottom','border-top','border-left','border-right','border-radius'],
+                    map: false
+                },
+                files: {
+                    'assets/css/muitoestilo.css': ['assets/css/muitoestilo.css']
+                }
+            }
+        },
+
+        postcss: {
+            options: {
+              map: true, // inline sourcemaps
+
+              processors: [
+                require('pixrem')(), // add fallbacks for rem units
+                require('autoprefixer')({browsers: 'last 2 versions'})
+              ]
+            },
+            dist: {
+              src: 'assets/css/*.css'
+            }
+        },
+
         watch: {
           css: {
             files: ['assets/scss/*.scss'],
-            tasks: ['sass','cssmin']
+            tasks: ['sass','px_to_rem','postcss','cssmin']
           }, 
           scripts: {
             files: 'js/*.js',
@@ -63,8 +92,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-px-to-rem');
 
 
-    grunt.registerTask('default', ['sass','cssmin','uglify','svgstore','watch']);
+
+    grunt.registerTask('default', ['sass','px_to_rem','postcss','cssmin','uglify','svgstore','watch']);
 
 };

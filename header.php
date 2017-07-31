@@ -39,8 +39,6 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'alexsantos' ); ?></a>
 
-	<div class="grid">
-		<div class="grid__col-xs-12">
 
 			<header id="masthead" class="site-header">
 
@@ -57,7 +55,5 @@
 				</nav><!-- #site-navigation -->
 			</header><!-- #masthead -->
 
-	</div>
-</div>
 
 	<div id="content" class="site-content">

@@ -38,6 +38,11 @@ get_header(); ?>
 						<div class="grid__col-md-12">
 
 							<div class="site-branding">
+
+								<svg viewBox="0 0 100 100" class="icon icon-caricatura">
+  									<use xlink:href="#icon-caricatura"></use>
+								</svg>
+
 								<?php
 								the_custom_logo();
 								if ( is_front_page() && is_home() ) : ?>
